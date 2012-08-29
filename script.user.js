@@ -8,6 +8,7 @@
 // @include	https://*what.cd/collage.php*
 // @include	https://*what.cd/artist.php*
 // @exclude	https://*what.cd/torrents.php?id=*
+// @updateURL   http://userscripts.org/scripts/source/142458.meta.js
 // @version	0.36
 // @date	2012-08-29
 // ==/UserScript==
