@@ -60,3 +60,9 @@ Added    Chromium support (with Tampermonkey)
 Fixed    Script not running on uploaded/snatched pages 2 and above
 Removed  Auto-scrolling on torrents.php
 Removed  Script update since current versions of both GreaseMonkey and Tampermonkey have built-in auto-update functions</pre>
+
+<b>0.5</b> (2012-10-29)
+<pre>Changed  Icons replaced by better-looking ones
+Fixed    Adding torrents from torrent group pages not working
+Fixed    Add icon displaying for each torrent group entry on artist pages
+Fixed    Math Range button not getting hidden in Chromium</pre>
