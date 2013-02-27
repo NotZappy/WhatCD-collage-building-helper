@@ -66,3 +66,12 @@ Removed  Script update since current versions of both GreaseMonkey and Tampermon
 Fixed    Adding torrents from torrent group pages not working
 Fixed    Add icon displaying for each torrent group entry on artist pages
 Fixed    Math Range button not getting hidden in Chromium</pre>
+
+<b>1.0</b> (2013-02-27)
+<pre>Added    Adding torrents from bookmarks and notification pages
+Added    Caching collage contents and displaying a tick on the various pages if a torrent is in the collage already
+Added    Removing torrents from the various pages (by clicking on the tick)
+Changed  Display of the active collage and the links on collage pages
+Removed  Sorting and reverse operations from the math range tool
+Added    Error handling (permission issues, locked collage etc.)
+Changed  Replaced the image buttons (Edit All, Math Range, Operation) by real buttons</pre>
