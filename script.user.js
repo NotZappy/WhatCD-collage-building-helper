@@ -14,8 +14,8 @@
 // @grant       GM_registerMenuCommand
 // @grant       GM_xmlhttpRequest
 // @updateURL   http://userscripts.org/scripts/source/142458.meta.js
-// @version     1.0
-// @date        2013-02-27
+// @version     1.0.1
+// @date        2013-03-05
 // ==/UserScript==
 
 // Changelog can be found at https://userscripts.org/topics/118127
@@ -686,17 +686,17 @@ function image_click(e) {
 			'action=add_torrent&auth=' + authKey + '&collageid=' + collageID + '&url=' + img.getAttribute('torrent-url')),
 		headers: { "Content-Type" : "application/x-www-form-urlencoded" },
 		onload: function(response) {
-			// add the checkmark image
-			if (response.responseText.match(/Invalid authorization key/)) {
+			// we get redirected if the action was successful, so if we are still on collages.php$, that means that something went wrong.
+			if (response.finalUrl.match(/\/collages\.php$/)) {
+				// generically read out the error message. yes, this code isn't pretty :-/
+				var title = response.responseText.substring(response.responseText.search('<h2>')+4);
+				title = title.substring(0, title.search('</h2>'));
+				var description = response.responseText.substring(response.responseText.search('<h2>Error</h2>')); 
+				description = description.substring(description.search('<p>')+3);
+				description = description.substring(0, description.search('</p>'));
+				
 				img.src = ICON_ERR;
-				alert('Invalid authorization key. Refresh the page and try again!');
-			} else if (response.responseText.match(/<h2>Error<\/h2>/)) {
-				img.src = ICON_ERR;
-				// yes, this code is ugly :-/
-				errmsg = response.responseText.substring(response.responseText.search('<h2>Error</h2>')); 
-				errmsg = errmsg.substring(errmsg.search('<p>')+3);
-				errmsg = errmsg.substring(0, errmsg.search('</p>'));
-				alert('Error: ' + errmsg);
+				alert(title+"\n\n"+description);
 			} else {
 				// Remember: inCollage is determined *before* sending the request. When inCollage is true, the torrent now isn't in the collage anymore!
 				if (inCollage) {

@@ -75,3 +75,6 @@ Changed  Display of the active collage and the links on collage pages
 Removed  Sorting and reverse operations from the math range tool
 Added    Error handling (permission issues, locked collage etc.)
 Changed  Replaced the image buttons (Edit All, Math Range, Operation) by real buttons</pre>
+
+<b>1.0.1</b> (2013-03-05)
+<pre>Changed  Improved error handling</pre>
