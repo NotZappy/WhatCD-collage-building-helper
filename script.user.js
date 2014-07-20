@@ -13,12 +13,9 @@
 // @grant       GM_deleteValue
 // @grant       GM_registerMenuCommand
 // @grant       GM_xmlhttpRequest
-// @updateURL   http://userscripts.org/scripts/source/142458.meta.js
 // @version     1.0.1
 // @date        2013-03-05
 // ==/UserScript==
-
-// Changelog can be found at https://userscripts.org/topics/118127
 
 var collageID, collName;
 // Momenticons: http://findicons.com/icon/263495/folder_open_add
